@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+
+
+<!-- head定義網頁的資訊-->
+<head>
+    <title>正隆與競廠主力品項價格紀錄</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 連結Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    
+    <!-- 連結JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <!-- CSS 格式修改 -->
+    <style>
+        .container-contact {
+            padding: 40px;
+            text-align: left;
+            color: white;
+            background-color: rgb(2, 32, 32);
+            width: 100%;
+            font-size: 18px;
+        }
+        
+        .container-contact h3 {
+            font-size: 30px;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .btn {
+            width: 100%;
+            font-size: 20px;
+            margin: 20px 0px 20px 0px;
+            background-color: rgb(6, 117, 119);
+            color: rgb(255, 255, 255);
+            border-radius: 20px;
+            transition: 1s;
+        }
+        
+        .container-contact .form-select {
+            font-size: 15px;
+            width: 50%;
+        }
+
+        .btn:hover {
+            background-color: rgb(178, 224, 84);
+            color: black;
+        }
+        
+        input {
+            margin-top: 10px;
+        }
+
+        .hide {
+            display: none;
+        }
+        
+        .show {
+            display: block;
+        }
+
+    </style>
+    
+</head>
+
+
+<!--body呈現網頁的內容-->
+<body>
+    <div class="container-contact">
+        <form id="myForm">
+            <h3>戰情看板-數據表單</h3>
+            <hr>
+        
+            <!-- 第一列 -->
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <!-- 第一個輸入 - 通路與客戶 -->
+                <div class="col-sm-4 form-group">
+                    <label>請選擇通路</label>
+                    <input type="radio" name="chn" id="chn_k" value="K" checked>K通路
+                    <input type="radio" name="chn" id="chn_g" value="G">G通路
+                    <input type="radio" name="chn" id="chn_m" value="M">M通路
+                    <input type="radio" name="chn" id="chn_ec" value="EC">EC通路
+                </div>
+
+                <!-- 第二個輸入 - 客戶 -->
+                <div class="col-sm-4 form-group">
+                    <label>請選擇客戶</label>
+                        <select class="form-select" id="cli" name="cli" size="1">
+                            <option>請選擇</option>
+                            <option class="option_K" value="大潤發">大潤發</option>
+                            <option class="option_K" value="家樂福">家樂福</option>
+                            <option class="option_K" value="愛買">愛買</option>
+                            <option class="option_G" value="小北(全省)" style="display: none;">小北(全省)</option>
+                            <option class="option_G" value="喜互惠(台北)" style="display: none;">喜互惠(台北)</option>
+                            <option class="option_G" value="喜美超市" style="display: none;">喜美超市</option>
+                            <option class="option_G" value="佳瑪(台北)" style="display: none;">佳瑪(台北)</option>
+                            <option class="option_G" value="自由聯盟(新竹)" style="display: none;">自由聯盟(新竹)</option>
+                            <option class="option_G" value="大九九(大林)" style="display: none;">大九九(大林)</option>
+                            <option class="option_G" value="東急屋(高雄)" style="display: none;">東急屋(高雄)</option>
+                            <option class="option_M" value="全聯" style="display: none">全聯</option>
+                            <option class="option_EC" value="MOMO" style="display: none">MOMO</option>
+                            <option class="option_EC" value="PCHOME" style="display: none">PCHOME</option>
+                        </select>
+                </div>                 
+                <div class="col-sm-2 form-group"></div>
+            </div><br>
+        
+            <!-- 第二列 -->
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <!-- 第三個輸入 - 料號/國條 -->
+                <div class="col-sm-4 form-group">
+                    <label>產品</label>
+                    <select class="form-select" id="bar" name="bar" size="1">
+                        <option selected disabled>請選擇</option>
+                        <option value="114506">春風抽取110抽X24包(114506)</option>
+                        <option value="114507">春風柔膚感抽衛110抽24包(114507)</option>
+                        <option value="114111">春風抽衛110抽X10包(114111)</option>
+                        <option value="114117">春風抽衛140抽X8包(114117)</option>
+                        <option value="114705-1">春風抽衛150抽X20包X3串(114705)</option>
+                        <option value="114705-2">春風抽衛150抽X20包X3串X2箱(114705)</option>
+                        <option value="114076L">春風輕柔細緻抽衛100抽x30包(114076L)</option>
+                        <option value="114112">春風抽衛110抽X8包(114112)</option>
+                        <option value="114110">春風抽衛110抽X12包(114110)</option>
+                        <option value="114522F">春風抽衛100抽X24包(114522F)</option>
+                        <option value="114128">春風抽衛130抽X12包(114128)</option>
+                        <option value="114203F">春風柔韌細緻抽衛110抽X12包X6串(114203F)</option>
+                        <option value="4710104008333">五月花清膚柔潤抽取100抽X20包+4包(4710104008333)</option>
+                        <option value="4710104009569">五月花蓬厚柔抽取100抽X10包(4710104009569)</option>
+                        <option value="4710104008555">五月花新柔韌抽取100抽X10包(4710104008555)</option>
+                        <option value="4710104007183">五月花新柔韌抽取110抽X12包X6袋/箱(4710104007183)</option>
+                        <option value="4710104026405">五月花花園版抽取100抽X10包(4710104026405)</option>
+                    </select> 
+                </div>
+                <!-- 第四個輸入 - 是否為DM價 -->
+                <div class="col-sm-4 form-group">
+                    <label>是否為DM價</label>
+                    <input type="radio" name="cat" value="DM價">是
+                    <input type="radio" name="cat" value="正常價">否
+                </div>
+                <div class="col-sm-2"></div>
+            </div><br>
+
+            <!-- 第三列 -->
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <!-- 第五個輸入 - 單位價格 -->
+                <div class="col-sm-4 form-group">
+                    <label>價格單位</label>
+                    <input type="radio" name="uni" value="箱">箱
+                    <input type="radio" name="uni" value="串">串 
+                </div>
+                <!-- 第六個輸入 - 價格 -->
+                <div class="col-sm-4 form-group">
+                    <label>價格(請輸入單串/箱價格)</label>
+                    <input id="pri"  name="pri" type="number" min="0" max="9999" required>
+                </div>
+                <div class="col-sm-2"></div>
+            </div><br>
+            <hr>
+
+            <!-- 第四列 -->
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4 form-group">
+                    <div class="col-sm-12">
+                    <button class="btn " type="submit" id="submitButton">送出</button>
+                    </div>
+                </div>
+                <div class="col-sm-4"></div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- JavaScript程式 -->
+    <script>
+        $("input[name='chn']").on("change", function()
+        {   
+            var v = $(this).val();
+            console.log(v)
+
+            $("#cli option:not(.option_"+v+")").hide();
+            $("#cli .option_"+v).css("display", "");
+        }
+        );
+
+        // 抓輸入的值
+        function getValues() {
+            var channel = document.querySelector("[name=chn]:checked");
+            var client = document.getElementById("cli");
+            var barcode = document.getElementById("bar");
+            var category = document.querySelector("[name=cat]:checked");
+            var unit = document.querySelector("[name=uni]:checked");
+            var price = document.getElementById("pri");
+            console.log("channel: " + channel)
+          
+            var rowData = {
+                channel: channel.value,
+                client: client.value,
+                barcode: barcode.value,
+                category: category.value,
+                unit: unit.value,
+                price: price.value
+            };
+
+            // 上傳資料
+            google.script.run.addData(rowData);
+            // 清除表單上的資料
+            document.getElementById("myForm").reset();
+            // 完成後的訊息
+            alert("表單已填寫完成，謝謝！");
+        }
+
+        document.getElementById("submitButton").addEventListener("click", getValues);
+    </script>
+</body>
+</html>  
